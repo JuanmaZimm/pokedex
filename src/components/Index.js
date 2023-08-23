@@ -5,7 +5,7 @@ const Index = () => {
     return (
         <div className="bg-starter">
             <Navbar />
-            <Pokemon/>
+            <Pokemon />
         </div>
     )
 }
