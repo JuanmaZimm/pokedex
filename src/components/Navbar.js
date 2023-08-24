@@ -15,7 +15,7 @@ const Navbar = (props) => {
 
     return (
         <nav className="bg-rose-700 flex flex-row content-center h-20 px-10 py-2">
-            <img src="/img/pokeball.png" className="" />
+            <img src="/img/pokeball.png" className="" alt="Pokeball img"/>
             <h1>PKDEX</h1>
             <div>
                 <input type="search" onChange={handleSearchChange} placeholder="Ingresar Número..."></input>
