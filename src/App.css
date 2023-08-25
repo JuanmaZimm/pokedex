@@ -40,3 +40,81 @@
     transform: rotate(360deg);
   }
 }
+
+/* Types */
+
+.tybe-bug {
+  background-color: #3f6212;
+}
+
+.type-dark {
+  background-color: #18181b;
+}
+
+.type-dragon {
+  background-color: #3730a3;
+}
+
+.type-electric {
+  background-color: #facc15;
+}
+
+.type-electric {
+  background-color: #facc15;
+}
+
+.type-fairy {
+  background-color: #f472b6;
+}
+
+.type-fighting {
+  background-color: #991b1b;
+}
+
+.type-fire {
+  background-color: #ea580c;
+}
+
+.type-flying {
+  background-color: #7dd3fc;
+}
+
+.type-ghost {
+  background-color: #3b0764;
+}
+
+.type-grass {
+  background-color: #65a30d;
+}
+
+.type-ground {
+  background-color: #78350f;
+}
+
+.type-ice {
+  background-color: #a5f3fc;
+}
+
+.type-normal {
+  background-color: #9ca3af;
+}
+
+.type-poison {
+  background-color: #6b21a8;
+}
+
+.type-psychic {
+  background-color: #be185d;
+}
+
+.type-rock {
+  background-color: #a16207;
+}
+
+.type-steel {
+  background-color: #bfdbfe;
+}
+
+.type-water {
+  background-color: #3b82f6;
+}

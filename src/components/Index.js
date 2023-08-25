@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import Navbar from "./Navbar"
 import Pokemon from "./Pokemon"
+import Footer from "./Bottom"
 
 const Index = () => {
     const [pokemonLoaded, setPokemonLoaded] = useState(false)
@@ -37,6 +38,7 @@ const Index = () => {
         <div className="bg-starter">
             <Navbar changeId={handleIdChange} />
             {pokemonLoaded ? <Pokemon pokemon={pokemon} /> : <>No hay Pokémon zapallo</>}
+            <Footer/>
         </div>
     )
 }

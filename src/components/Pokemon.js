@@ -2,29 +2,45 @@ import { useState, useEffect } from "react"
 import typesStyles from "./typesStyle"
 
 const Pokemon = (props) => {
-    const tipoVacio = {
-        color: 'gray-400'
-    }
-    const [mainStyles, setMainStyles] = useState(tipoVacio)
-    const [secondaryStyles, setSecondaryStyles] = useState(tipoVacio)
+    const pokemon = props.pokemon
+    const [types, setTypes] = useState(['grass', 'poison']);
+    const [abilities, setAbilities] = useState(['overgrow']);
+    const [hiddenAbilty, setHiddenAbility] = useState('chlorophyll')
 
-    const pokemon = props.pokemon;
-    const types = pokemon.types.map((type) => type.type.name);
-    const abilities = pokemon.abilities.filter((ability) => ability.is_hidden === false).map(ability => ability.ability.name);
-    const hiddenAbilty = pokemon.abilities.find((ability) => ability.is_hidden === true).ability.name;
+    const firstType = { color: 'lime-600' }
+    const [mainStyles, setMainStyles] = useState({ color: 'lime-600' })
+    const [secondaryStyles, setSecondaryStyles] = useState({ color: 'purple-800' })
+
+    // const pokemon = props.pokemon;
+    // const types = pokemon.types.map((type) => type.type.name);
+    // const abilities = pokemon.abilities.filter((ability) => ability.is_hidden === false).map(ability => ability.ability.name);
+    // if(pokemon.abilities.find((ability) => ability.is_hidden === true)){
+
+    // }
+    // const hiddenAbilty = pokemon.abilities.find((ability) => ability.is_hidden === true)?.ability.name;
 
     useEffect(() => {
-        // Set mainStyles based on the type
-        console.log(typesStyles[types[0]].color)
+        const typesAux = pokemon.types.map((type) => type.type.name);
+        setTypes(typesAux)
+        const abilitiesAux = pokemon.abilities.filter((ability) => ability.is_hidden === false).map(ability => ability.ability.name);
+        setAbilities(abilitiesAux)
+        if(pokemon.abilities.find((ability) => ability.is_hidden === true)){
+            setHiddenAbility(pokemon.abilities.find((ability) => ability.is_hidden === true)?.ability.name)
+        } else {
+            setHiddenAbility('None')
+        }
+    }, [pokemon])
+
+    useEffect(() => {
         setMainStyles(typesStyles[types[0]]);
-        setSecondaryStyles(typesStyles[types[types.length-1]]);
+        setSecondaryStyles(typesStyles[types[types.length - 1]]);
     }, [types]);
 
     //const bg = `bg-gradient-to-b from-${mainStyles.color} from-50% to-${secondaryStyles.color} to-50% mx-auto flex flex-col p-4 my-4 w-1/2`
 
 
     return (
-        <div onClick={() => console.log(types)} className={`bg-gradient-to-b from-${mainStyles.color} from-50% to-${secondaryStyles.color} to-50% mx-auto flex flex-col p-4 my-4 w-1/2`}>
+        <div className={`type-${types[0]} mx-auto flex flex-col p-4 my-4 w-1/2`}>
             <div className="text center flex flex-row flex-wrap justify-between content-center text-gray-50 font-semibold text-2xl mb-2">
                 <h3>#{pokemon?.id}</h3>
                 <h3>{pokemon?.name[0].toUpperCase() + pokemon?.name.slice(1, pokemon?.name.length)}</h3>
