@@ -3,7 +3,7 @@ import { GrMail } from "react-icons/gr";
 
 const Footer = () => {
     return (
-        <footer className="bg-rose-600 p-4">
+        <footer className="bg-rose-600 p-4 border-t-rose-950 border-t-2">
             <div className="mx-auto">
                 <p className="text-xl">Contacto:</p>
                 <ul className="m-auto">
