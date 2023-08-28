@@ -35,7 +35,7 @@ const Index = () => {
     }
 
     const handleNextButton = () => {
-        const next = id + 1;
+        const next = Number(id) + 1;
         if (next <= 1010) {
             setId(next);
             fetchPokemon();

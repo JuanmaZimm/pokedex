@@ -30,17 +30,17 @@ const Pokemon = (props) => {
             <div className="flex flex-row justify-between w-full">
                 <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon?.id}.png`} className="bg-gray-50 w-1/2 rounded-xl border border-black border-2" alt="Pokemon official artwork" />
                 <div className="flex flex-col justify-between w-1/2 pl-4">
-                    <div className="bg-gray-50 w-full mx-auto rounded-lg flex flex-row flex-wrap justify-between content-center items-center px-1 h-8 border border-black border-2 border border-black border-2">
+                    <div className="bg-gray-50 w-full mx-auto rounded-lg flex flex-row flex-nowrap justify-between items-center px-1 h-8 border border-black border-2 border border-black border-2">
                         <p className={`${types.length > 1 ? 'w-1/3' : 'w-1/2'} text-center`}>{types.length > 1 ? 'Types' : 'Type'}:</p>
-                        <div className={`${types.length > 1 ? 'w-2/3' : 'w-1/2'} flex flex-row flex-wrap ${types.length > 1 ? 'justify-between' : 'justify-center'} content-center`}>
+                        <div className={`${types.length > 1 ? 'w-2/3' : 'w-1/2'} flex flex-row flex-wrap ${types.length > 1 ? 'justify-between' : 'justify-center'} content-center gap-0.5`}>
                             {types.map((type, index) =>
-                                <img key={index} src={`/img/types/${type}.png`} className="w-24 text-center" alt={type} />
+                                <img key={index} src={`/img/types/${type}.png`} className="w-1/2 text-center" alt={type} />
                             )}
                         </div>
                     </div>
                     <div className="bg-gray-50 w-full mx-auto rounded-lg flex flex-row justify-around content-center items-center px-1 h-8 border border-black border-2">
-                        <p className={`${abilities.length > 1 ? 'w-1/3' : 'w-1/2'} text-center`}>{abilities.length > 1 ? 'Abilities' : 'Ability'}:</p>
-                        <div className={`${abilities.length > 1 ? 'basis-2/3' : 'basis-1/2'} flex flex-row flex-wrap justify-center content-center`}>
+                        <p className={`${abilities.length > 1 ? 'basis-1/3' : 'basis-1/2'} text-center`}>{abilities.length > 1 ? 'Abilities' : 'Ability'}:</p>
+                        <div className={`${abilities.length > 1 ? 'basis-2/3' : 'basis-1/2'} flex flex-row justify-center content-center`}>
                             {abilities.map((ability, index) =>
                                 <p key={index} className={`text-center font-semibold`}>
                                     {ability[0].toUpperCase() + ability.slice(1, ability.length)}
